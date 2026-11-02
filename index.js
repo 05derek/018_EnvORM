@@ -30,3 +30,14 @@ app.post('/komik', async (req, res) => {
     }
 });
 
+app.get ('/komik', async (req, res) => {
+    try {
+        const komik = await db.Komik.findAll();
+        res.send(komik);
+    } catch (err) {
+        res.send(err);
+    }
+});
+
+
+
